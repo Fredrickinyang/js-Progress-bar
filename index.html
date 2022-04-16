@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Progress bars</title>
+</head>
+
+<body style="margin:0;padding: 0;background-color:rgb(6, 2, 42);">
+    <div style="display: flex; justify-content: center; margin-top:15rem">
+        <span>
+           <p id="count" style="color:rgb(255, 187, 0); font-size:20px; text-align: center;"></p>
+        <div class="Progress-container" style="  background-color: rgb(255, 187, 0);width: 500px;height: 10px;border-radius: 10px; padding:3px;">
+            <div class="progress" id="progress" style="background-color: rgb(192, 18, 18);height: 100%;border-radius: 10px;"></div>
+        </div> 
+        </span>
+
+    </div>
+
+
+    <script>
+        var countValue = 0;
+
+
+        function progresscount() {
+            prog = document.getElementById("count").innerHTML = countValue;
+            let progressBar = document.getElementById("progress");
+            let percentageProgress = progressBar.style.width = String(countValue) + "%";
+            countValue == 100 ? countValue = 0 : "";
+            countValue++;
+            timeout = setTimeout(progresscount, 1000);
+
+        }
+        progresscount()
+    </script>
+    </script>
+</body>
+
+</html>
